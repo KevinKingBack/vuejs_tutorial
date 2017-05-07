@@ -1,0 +1,1938 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Markdown-iroc</title>
+  <style>
+    @font-face {
+      font-family: octicons-link;
+      src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+    }
+    
+    .markdown-body {
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+      line-height: 1.5;
+      color: #333;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-size: 16px;
+      line-height: 1.5;
+      word-wrap: break-word;
+    }
+    
+    .markdown-body .pl-c {
+      color: #969896;
+    }
+    
+    .markdown-body .pl-c1,
+    .markdown-body .pl-s .pl-v {
+      color: #0086b3;
+    }
+    
+    .markdown-body .pl-e,
+    .markdown-body .pl-en {
+      color: #795da3;
+    }
+    
+    .markdown-body .pl-smi,
+    .markdown-body .pl-s .pl-s1 {
+      color: #333;
+    }
+    
+    .markdown-body .pl-ent {
+      color: #63a35c;
+    }
+    
+    .markdown-body .pl-k {
+      color: #a71d5d;
+    }
+    
+    .markdown-body .pl-s,
+    .markdown-body .pl-pds,
+    .markdown-body .pl-s .pl-pse .pl-s1,
+    .markdown-body .pl-sr,
+    .markdown-body .pl-sr .pl-cce,
+    .markdown-body .pl-sr .pl-sre,
+    .markdown-body .pl-sr .pl-sra {
+      color: #183691;
+    }
+    
+    .markdown-body .pl-v {
+      color: #ed6a43;
+    }
+    
+    .markdown-body .pl-id {
+      color: #b52a1d;
+    }
+    
+    .markdown-body .pl-ii {
+      color: #f8f8f8;
+      background-color: #b52a1d;
+    }
+    
+    .markdown-body .pl-sr .pl-cce {
+      font-weight: bold;
+      color: #63a35c;
+    }
+    
+    .markdown-body .pl-ml {
+      color: #693a17;
+    }
+    
+    .markdown-body .pl-mh,
+    .markdown-body .pl-mh .pl-en,
+    .markdown-body .pl-ms {
+      font-weight: bold;
+      color: #1d3e81;
+    }
+    
+    .markdown-body .pl-mq {
+      color: #008080;
+    }
+    
+    .markdown-body .pl-mi {
+      font-style: italic;
+      color: #333;
+    }
+    
+    .markdown-body .pl-mb {
+      font-weight: bold;
+      color: #333;
+    }
+    
+    .markdown-body .pl-md {
+      color: #bd2c00;
+      background-color: #ffecec;
+    }
+    
+    .markdown-body .pl-mi1 {
+      color: #55a532;
+      background-color: #eaffea;
+    }
+    
+    .markdown-body .pl-mdr {
+      font-weight: bold;
+      color: #795da3;
+    }
+    
+    .markdown-body .pl-mo {
+      color: #1d3e81;
+    }
+    
+    .markdown-body .octicon {
+      display: inline-block;
+      vertical-align: text-top;
+      fill: currentColor;
+    }
+    
+    .markdown-body a {
+      background-color: transparent;
+      -webkit-text-decoration-skip: objects;
+    }
+    
+    .markdown-body a:active,
+    .markdown-body a:hover {
+      outline-width: 0;
+    }
+    
+    .markdown-body strong {
+      font-weight: inherit;
+    }
+    
+    .markdown-body strong {
+      font-weight: bolder;
+    }
+    
+    .markdown-body h1 {
+      font-size: 2em;
+      margin: 0.67em 0;
+    }
+    
+    .markdown-body img {
+      border-style: none;
+    }
+    
+    .markdown-body svg:not(:root) {
+      overflow: hidden;
+    }
+    
+    .markdown-body code,
+    .markdown-body kbd,
+    .markdown-body pre {
+      font-family: monospace, monospace;
+      font-size: 1em;
+    }
+    
+    .markdown-body hr {
+      box-sizing: content-box;
+      height: 0;
+      overflow: visible;
+    }
+    
+    .markdown-body input {
+      font: inherit;
+      margin: 0;
+    }
+    
+    .markdown-body input {
+      overflow: visible;
+    }
+    
+    .markdown-body button:-moz-focusring,
+    .markdown-body [type="button"]:-moz-focusring,
+    .markdown-body [type="reset"]:-moz-focusring,
+    .markdown-body [type="submit"]:-moz-focusring {
+      outline: 1px dotted ButtonText;
+    }
+    
+    .markdown-body [type="checkbox"] {
+      box-sizing: border-box;
+      padding: 0;
+    }
+    
+    .markdown-body * {
+      box-sizing: border-box;
+    }
+    
+    .markdown-body input {
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+    }
+    
+    .markdown-body a {
+      color: #4078c0;
+      text-decoration: none;
+    }
+    
+    .markdown-body a:hover,
+    .markdown-body a:active {
+      text-decoration: underline;
+    }
+    
+    .markdown-body strong {
+      font-weight: 600;
+    }
+    
+    .markdown-body hr {
+      height: 0;
+      margin: 15px 0;
+      overflow: hidden;
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    .markdown-body hr::before {
+      display: table;
+      content: "";
+    }
+    
+    .markdown-body hr::after {
+      display: table;
+      clear: both;
+      content: "";
+    }
+    
+    .markdown-body table {
+      border-spacing: 0;
+      border-collapse: collapse;
+    }
+    
+    .markdown-body td,
+    .markdown-body th {
+      padding: 0;
+    }
+    
+    .markdown-body h1,
+    .markdown-body h2,
+    .markdown-body h3,
+    .markdown-body h4,
+    .markdown-body h5,
+    .markdown-body h6 {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    
+    .markdown-body h1 {
+      font-size: 32px;
+      font-weight: 600;
+    }
+    
+    .markdown-body h2 {
+      font-size: 24px;
+      font-weight: 600;
+    }
+    
+    .markdown-body h3 {
+      font-size: 20px;
+      font-weight: 600;
+    }
+    
+    .markdown-body h4 {
+      font-size: 16px;
+      font-weight: 600;
+    }
+    
+    .markdown-body h5 {
+      font-size: 14px;
+      font-weight: 600;
+    }
+    
+    .markdown-body h6 {
+      font-size: 12px;
+      font-weight: 600;
+    }
+    
+    .markdown-body p {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    
+    .markdown-body blockquote {
+      margin: 0;
+    }
+    
+    .markdown-body ul,
+    .markdown-body ol {
+      padding-left: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    
+    .markdown-body ol ol,
+    .markdown-body ul ol {
+      list-style-type: lower-roman;
+    }
+    
+    .markdown-body ul ul ol,
+    .markdown-body ul ol ol,
+    .markdown-body ol ul ol,
+    .markdown-body ol ol ol {
+      list-style-type: lower-alpha;
+    }
+    
+    .markdown-body dd {
+      margin-left: 0;
+    }
+    
+    .markdown-body code {
+      font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+      font-size: 12px;
+    }
+    
+    .markdown-body pre {
+      margin-top: 0;
+      margin-bottom: 0;
+      font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    }
+    
+    .markdown-body .octicon {
+      vertical-align: text-bottom;
+    }
+    
+    .markdown-body input {
+      -webkit-font-feature-settings: "liga" 0;
+      font-feature-settings: "liga" 0;
+    }
+    
+    .markdown-body .form-select::-ms-expand {
+      opacity: 0;
+    }
+    
+    .markdown-body::before {
+      display: table;
+      content: "";
+    }
+    
+    .markdown-body::after {
+      display: table;
+      clear: both;
+      content: "";
+    }
+    
+    .markdown-body>*:first-child {
+      margin-top: 0 !important;
+    }
+    
+    .markdown-body>*:last-child {
+      margin-bottom: 0 !important;
+    }
+    
+    .markdown-body a:not([href]) {
+      color: inherit;
+      text-decoration: none;
+    }
+    
+    .markdown-body .anchor {
+      float: left;
+      padding-right: 4px;
+      margin-left: -20px;
+      line-height: 1;
+    }
+    
+    .markdown-body .anchor:focus {
+      outline: none;
+    }
+    
+    .markdown-body p,
+    .markdown-body blockquote,
+    .markdown-body ul,
+    .markdown-body ol,
+    .markdown-body dl,
+    .markdown-body table,
+    .markdown-body pre {
+      margin-top: 0;
+      margin-bottom: 16px;
+    }
+    
+    .markdown-body hr {
+      height: 0.25em;
+      padding: 0;
+      margin: 24px 0;
+      background-color: #e7e7e7;
+      border: 0;
+    }
+    
+    .markdown-body blockquote {
+      padding: 0 1em;
+      color: #777;
+      border-left: 0.25em solid #ddd;
+    }
+    
+    .markdown-body blockquote>:first-child {
+      margin-top: 0;
+    }
+    
+    .markdown-body blockquote>:last-child {
+      margin-bottom: 0;
+    }
+    
+    .markdown-body kbd {
+      display: inline-block;
+      padding: 3px 5px;
+      font-size: 11px;
+      line-height: 10px;
+      color: #555;
+      vertical-align: middle;
+      background-color: #fcfcfc;
+      border: solid 1px #ccc;
+      border-bottom-color: #bbb;
+      border-radius: 3px;
+      box-shadow: inset 0 -1px 0 #bbb;
+    }
+    
+    .markdown-body h1,
+    .markdown-body h2,
+    .markdown-body h3,
+    .markdown-body h4,
+    .markdown-body h5,
+    .markdown-body h6 {
+      margin-top: 24px;
+      margin-bottom: 16px;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+    
+    .markdown-body h1 .octicon-link,
+    .markdown-body h2 .octicon-link,
+    .markdown-body h3 .octicon-link,
+    .markdown-body h4 .octicon-link,
+    .markdown-body h5 .octicon-link,
+    .markdown-body h6 .octicon-link {
+      color: #000;
+      vertical-align: middle;
+      visibility: hidden;
+    }
+    
+    .markdown-body h1:hover .anchor,
+    .markdown-body h2:hover .anchor,
+    .markdown-body h3:hover .anchor,
+    .markdown-body h4:hover .anchor,
+    .markdown-body h5:hover .anchor,
+    .markdown-body h6:hover .anchor {
+      text-decoration: none;
+    }
+    
+    .markdown-body h1:hover .anchor .octicon-link,
+    .markdown-body h2:hover .anchor .octicon-link,
+    .markdown-body h3:hover .anchor .octicon-link,
+    .markdown-body h4:hover .anchor .octicon-link,
+    .markdown-body h5:hover .anchor .octicon-link,
+    .markdown-body h6:hover .anchor .octicon-link {
+      visibility: visible;
+    }
+    
+    .markdown-body h1 {
+      padding-bottom: 0.3em;
+      font-size: 2em;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .markdown-body h2 {
+      padding-bottom: 0.3em;
+      font-size: 1.5em;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .markdown-body h3 {
+      font-size: 1.25em;
+    }
+    
+    .markdown-body h4 {
+      font-size: 1em;
+    }
+    
+    .markdown-body h5 {
+      font-size: 0.875em;
+    }
+    
+    .markdown-body h6 {
+      font-size: 0.85em;
+      color: #777;
+    }
+    
+    .markdown-body ul,
+    .markdown-body ol {
+      padding-left: 2em;
+    }
+    
+    .markdown-body ul ul,
+    .markdown-body ul ol,
+    .markdown-body ol ol,
+    .markdown-body ol ul {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    
+    .markdown-body li>p {
+      margin-top: 16px;
+    }
+    
+    .markdown-body li+li {
+      margin-top: 0.25em;
+    }
+    
+    .markdown-body dl {
+      padding: 0;
+    }
+    
+    .markdown-body dl dt {
+      padding: 0;
+      margin-top: 16px;
+      font-size: 1em;
+      font-style: italic;
+      font-weight: bold;
+    }
+    
+    .markdown-body dl dd {
+      padding: 0 16px;
+      margin-bottom: 16px;
+    }
+    
+    .markdown-body table {
+      display: block;
+      width: 100%;
+      overflow: auto;
+      word-break: normal;
+      word-break: keep-all;
+    }
+    
+    .markdown-body table th {
+      font-weight: bold;
+    }
+    
+    .markdown-body table th,
+    .markdown-body table td {
+      padding: 6px 13px;
+      border: 1px solid #ddd;
+    }
+    
+    .markdown-body table tr {
+      background-color: #fff;
+      border-top: 1px solid #ccc;
+    }
+    
+    .markdown-body table tr:nth-child(2n) {
+      background-color: #f8f8f8;
+    }
+    
+    .markdown-body img {
+      max-width: 100%;
+      box-sizing: content-box;
+      background-color: #fff;
+    }
+    
+    .markdown-body code {
+      padding: 0;
+      padding-top: 0.2em;
+      padding-bottom: 0.2em;
+      margin: 0;
+      font-size: 85%;
+      background-color: rgba(0, 0, 0, 0.04);
+      border-radius: 3px;
+    }
+    
+    .markdown-body code::before,
+    .markdown-body code::after {
+      letter-spacing: -0.2em;
+      content: "\00a0";
+    }
+    
+    .markdown-body pre {
+      word-wrap: normal;
+    }
+    
+    .markdown-body pre>code {
+      padding: 0;
+      margin: 0;
+      font-size: 100%;
+      word-break: normal;
+      white-space: pre;
+      background: transparent;
+      border: 0;
+    }
+    
+    .markdown-body .highlight {
+      margin-bottom: 16px;
+    }
+    
+    .markdown-body .highlight pre {
+      margin-bottom: 0;
+      word-break: normal;
+    }
+    
+    .markdown-body .highlight pre,
+    .markdown-body pre {
+      padding: 16px;
+      overflow: auto;
+      font-size: 85%;
+      line-height: 1.45;
+      background-color: #f7f7f7;
+      border-radius: 3px;
+    }
+    
+    .markdown-body pre code {
+      display: inline;
+      max-width: auto;
+      padding: 0;
+      margin: 0;
+      overflow: visible;
+      line-height: inherit;
+      word-wrap: normal;
+      background-color: transparent;
+      border: 0;
+    }
+    
+    .markdown-body pre code::before,
+    .markdown-body pre code::after {
+      content: normal;
+    }
+    
+    .markdown-body .pl-0 {
+      padding-left: 0 !important;
+    }
+    
+    .markdown-body .pl-1 {
+      padding-left: 3px !important;
+    }
+    
+    .markdown-body .pl-2 {
+      padding-left: 6px !important;
+    }
+    
+    .markdown-body .pl-3 {
+      padding-left: 12px !important;
+    }
+    
+    .markdown-body .pl-4 {
+      padding-left: 24px !important;
+    }
+    
+    .markdown-body .pl-5 {
+      padding-left: 36px !important;
+    }
+    
+    .markdown-body .pl-6 {
+      padding-left: 48px !important;
+    }
+    
+    .markdown-body .full-commit .btn-outline:not(:disabled):hover {
+      color: #4078c0;
+      border: 1px solid #4078c0;
+    }
+    
+    .markdown-body kbd {
+      display: inline-block;
+      padding: 3px 5px;
+      font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+      line-height: 10px;
+      color: #555;
+      vertical-align: middle;
+      background-color: #fcfcfc;
+      border: solid 1px #ccc;
+      border-bottom-color: #bbb;
+      border-radius: 3px;
+      box-shadow: inset 0 -1px 0 #bbb;
+    }
+    
+    .markdown-body:checked+.radio-label {
+      position: relative;
+      z-index: 1;
+      border-color: #4078c0;
+    }
+    
+    .markdown-body .task-list-item {
+      list-style-type: none;
+    }
+    
+    .markdown-body .task-list-item+.task-list-item {
+      margin-top: 3px;
+    }
+    
+    .markdown-body .task-list-item input {
+      margin: 0 0.2em 0.25em -1.6em;
+      vertical-align: middle;
+    }
+    
+    .markdown-body hr {
+      border-bottom-color: #eee;
+    }
+    
+    .markdown-body {
+      box-sizing: border-box;
+      min-width: 200px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 45px;
+    }
+  </style>
+</head>
+
+<body>
+  <article class="markdown-body">
+    <h1 id="vuejs-tutorial">vuejs tutorial</h1>
+<h2 id="-">搭建案例演示自动刷新环境</h2>
+<p>创建一个 <code>package.josn</code> 文件：</p>
+<pre><code class="lang-bash">npm init -y
+</code></pre>
+<p>安装 <code>browser-sync</code>:</p>
+<pre><code class="lang-bash"># npm install --save-dev browser-sync
+# 将 browser-sync 包保存到开发依赖中
+# 就可以执行 npm install 的时候加入 --production 选项不安装这个包
+npm i -D browser-sync
+</code></pre>
+<p>在 package.json 文件中加入以下内容：</p>
+<pre><code class="lang-json">&quot;scripts&quot;: {
+  &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;,
+  &quot;start&quot;: &quot;browser-sync start --server --directory --files \&quot;code/*.html\&quot;&quot;
+}
+</code></pre>
+<p>打开终端，启动开发预览服务：</p>
+<pre><code class="lang-bash">npm start
+</code></pre>
+<hr>
+<h2 id="vuejs-">vuejs 介绍</h2>
+<hr>
+<h2 id="-">安装</h2>
+<ul>
+<li>Vue.js 不支持 IE8 及其以下版本，因为 Vue.js 使用了 IE8 不能模拟的 ECMAScript 5 特性</li>
+<li>每个版本的更新日志见：<a href="https://github.com/vuejs/vue/releases">https://github.com/vuejs/vue/releases</a></li>
+<li>独立 js 文件<ul>
+<li>开发版本（未压缩）：<a href="http://vuejs.org/js/vue.js">http://vuejs.org/js/vue.js</a></li>
+<li>生产版本（压缩）：<a href="http://vuejs.org/js/vue.min.js">http://vuejs.org/js/vue.min.js</a></li>
+</ul>
+</li>
+<li>CDN：<a href="https://unpkg.com/vue">https://unpkg.com/vue</a></li>
+<li>NPM: <code>npm install vue</code></li>
+<li>Bower: <code>bower install vue</code></li>
+<li>兼容 AMD 规范<ul>
+<li>独立下载版本或通过 Bower 安装的版本已用 UMD 包装，因此它们可以直接用作 AMD 模块。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="vue-">Vue 实例</h2>
+<ul>
+<li>每个 Vue.js 应用都是通过构造函数 Vue 创建的<ul>
+<li>new Vue 可以认为是 ng 中的控制器</li>
+<li>这个控制器管理 el 属性指定的节点</li>
+</ul>
+</li>
+<li><p>在实例化 Vue 时，需要传入一个选项对象，它可以包含数据、模板、挂载元素、方法、生命周期钩子等选项</p>
+<ul>
+<li>data: 属性数据</li>
+<li>computed: 计算属性</li>
+<li>methods: 方法</li>
+<li>el: 挂载点</li>
+<li>directives: 自定义指令</li>
+<li>filters: 自定义过滤器</li>
+<li>...</li>
+<li>全部选项可以在 API 文档中查看：<a href="https://cn.vuejs.org/v2/api/">https://cn.vuejs.org/v2/api/</a></li>
+</ul>
+</li>
+<li><p>实例选项：data</p>
+<ul>
+<li><a href="https://cn.vuejs.org/v2/guide/instance.html#属性与方法">https://cn.vuejs.org/v2/guide/instance.html#属性与方法</a></li>
+<li><a href="https://cn.vuejs.org/v2/api/#data">选项/数据 - data</a></li>
+<li><a href="https://cn.vuejs.org/v2/guide/reactivity.html">深入响应式原理</a></li>
+<li>作用：根据视图抽象数据模型，data 就是 ViewModel</li>
+<li>data 就是数据驱动视图中的 数据</li>
+<li><strong>注意：视图中使用的数据必须在 data 中初始化</strong></li>
+<li>每个 Vue 实例都会代理其 data 对象里所有的属性<ul>
+<li>也可以通过 vue 实例的 $data 属性访问 data 中的数据</li>
+<li>建议：如果要使用 vm 读取或修改  data 中的数据，建议通过 <code>vm.$data</code> 去访问修改</li>
+</ul>
+</li>
+<li>只有被初始代理的属性是响应式的<ul>
+<li>如果是在实例创建之后添加新的属性到实例上，它不会触发视图更新</li>
+</ul>
+</li>
+<li>Vue 不允许在已经创建的实例上动态添加新的根级响应式属性</li>
+<li>Vue 不能检测到对象属性的动态添加或删除<ul>
+<li>也就是说动态添加或删除的对象属性不是响应式的</li>
+<li>如果希望动态添加和删除对象的属性是响应式的则需要通过：<ul>
+<li><code>Vue.set( object, key, value )</code></li>
+<li>或 <code>vm.$set( object, key, value )</code></li>
+</ul>
+</li>
+<li>如果删除对象属性是响应式的：<ul>
+<li><code>Vue.delete( object, key )</code></li>
+<li>或 <code>vm.$delete( object, key )</code></li>
+</ul>
+</li>
+<li>也就是说 data 中的对象成员如果动态的添加属性是不会得到视图的更新的</li>
+<li>如果想要动态添加和删除的时候得到视图的更新则一定要通过 vm.$set 或者 vm.$delete 来处理</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>实例选项：methods</p>
+<ul>
+<li><a href="https://cn.vuejs.org/v2/api/#methods">https://cn.vuejs.org/v2/api/#methods</a></li>
+<li>作用：为视图交互提供行为函数</li>
+<li>可以在行为函数中通过 <code>this</code> 访问 data 中的数据成员</li>
+<li>注意：methods 中的行为函数不要写箭头函数<ul>
+<li>因为这样会改变内部 this 的指向</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>实例属性</p>
+<ul>
+<li>vue 实例可以直接访问 data 中的数据成员</li>
+<li>也可以通过 实例.$data.data中的数据成员 进行访问</li>
+<li>建议使用 实例.$data.数据成员 去修改</li>
+<li><a href="https://cn.vuejs.org/v2/api/#实例属性">https://cn.vuejs.org/v2/api/#实例属性</a></li>
+<li>$data<ul>
+<li>Vue 实例观察的数据对象。Vue 实例代理了对其 data 对象属性的访问。</li>
+</ul>
+</li>
+<li>$el<ul>
+<li>Vue 实例使用的根 DOM 元素</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>实例方法/数据</p>
+<ul>
+<li><a href="https://cn.vuejs.org/v2/api/#实例方法-数据">https://cn.vuejs.org/v2/api/#实例方法-数据</a></li>
+<li>$watch<ul>
+<li>可以用来监视数据成员的变化，当数据成员发生变化，执行 watch 函数</li>
+</ul>
+</li>
+<li>$set  Vue.set 的别名</li>
+<li>$delete Vue.delete 的别名</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="-">模板语法</h2>
+<h3 id="-">插值</h3>
+<h4 id="-">文本</h4>
+<ul>
+<li>响应插值：<ul>
+<li><code>&lt;span&gt;Message: {{ msg }}&lt;/span&gt;</code></li>
+<li>注意： Mustache 语法不能在 HTML 属性中使用，应使用 <code>v-bind</code> 指令</li>
+</ul>
+</li>
+<li>一次性插值：<ul>
+<li><code>&lt;span v-once&gt;This will never change: {{ msg }}&lt;/span&gt;</code></li>
+<li>注意：会影响该节点及内部节点所有的绑定</li>
+</ul>
+</li>
+</ul>
+<h4 id="-html">纯 HTML</h4>
+<p>双大括号会将数据解释为纯文本，而非 HTML 。为了输出真正的 HTML ，你需要使用 <code>v-html</code> 指令：</p>
+<pre><code class="lang-html">&lt;div v-html=&quot;rawHtml&quot;&gt;&lt;/div&gt;
+</code></pre>
+<ul>
+<li>为什么不直接输出 HTML</li>
+<li>什么是 XSS 攻击：跨站脚本攻击</li>
+</ul>
+<h4 id="-">属性</h4>
+<p><strong>注意：Mustache 不能在 HTML 属性中使用，应使用 v-bind 指令：</strong></p>
+<pre><code class="lang-html">&lt;div v-bind:id=&quot;dynamicId&quot;&gt;&lt;/div&gt;
+</code></pre>
+<p>这对布尔值的属性也有效 —— 如果条件被求值为 false 的话该属性会被移除：</p>
+<pre><code class="lang-html">&lt;button v-bind:disabled=&quot;someDynamicCondition&quot;&gt;Button&lt;/button&gt;
+</code></pre>
+<h4 id="-javascript-">使用 JavaScript 表达式</h4>
+<p>Vue.js 都提供了完全的 JavaScript 表达式支持：</p>
+<pre><code class="lang-html">{{ number + 1 }}
+
+{{ ok ? &#39;YES&#39; : &#39;NO&#39; }}
+
+{{ message.split(&#39;&#39;).reverse().join(&#39;&#39;) }}
+
+&lt;div v-bind:id=&quot;&#39;list-&#39; + id&quot;&gt;&lt;/div&gt;
+</code></pre>
+<p>这些表达式会在所属 Vue 实例的数据作用域下作为 JavaScript 被解析。
+有个限制就是，每个绑定都只能包含单个表达式，所以下面的例子都不会生效:</p>
+<pre><code class="lang-html">&lt;!-- 这是语句，不是表达式 --&gt;
+{{ var a = 1 }}
+
+&lt;!-- 流控制也不会生效，请使用三元表达式 --&gt;
+{{ if (ok) { return message } }}
+</code></pre>
+<h3 id="-">指令</h3>
+<h3 id="vue-">Vue 内置指令</h3>
+<ul>
+<li>v-text<ul>
+<li>和 {{}} 效果是一样</li>
+<li>但是 {{}} 会闪烁</li>
+<li>解决方法就是利用 v-text 绑定数据</li>
+<li>如果又想用 {{}}} 还需要避免闪烁</li>
+<li>使用 v-cloak 处理</li>
+</ul>
+</li>
+<li>v-html<ul>
+<li>默认 {{}} 和 v-text 会把 html 格式字符串原样输出</li>
+<li>可以使用 v-html 将 html 格式字符串作为 HTML 渲染到节点中</li>
+</ul>
+</li>
+<li>v-show<ul>
+<li>条件显示</li>
+<li>是否显示和隐藏</li>
+</ul>
+</li>
+<li>v-if<ul>
+<li>条件渲染</li>
+<li>是否渲染和移除</li>
+</ul>
+</li>
+<li>v-else<ul>
+<li>v-if 的 else 块</li>
+</ul>
+</li>
+<li>v-else-if<ul>
+<li>是 v-if 的逻辑块</li>
+<li>同样的，也必须紧跟着 v-if </li>
+</ul>
+</li>
+<li>v-for<ul>
+<li>循环遍历输出</li>
+<li><code>v-for=&quot;item in 数组|对象&quot;</code></li>
+<li><code>v-for=&quot;(item, index) in 数组&quot;</code></li>
+</ul>
+</li>
+<li>v-on<ul>
+<li>DOM 元素的事件绑定</li>
+<li>例如：<code>v-on:click</code>、<code>v-on:blur</code></li>
+<li>简写就是：<code>@事件名</code></li>
+</ul>
+</li>
+<li>v-bind<ul>
+<li>动态绑定 HTML 属性</li>
+<li>例如：<code>v-bind:title</code>、<code>v-bind:class</code></li>
+<li>简写：<code>:属性名=&quot;值&quot;</code></li>
+</ul>
+</li>
+<li>v-model<ul>
+<li>和表单控件进行双向数据绑定</li>
+<li><a href="https://cn.vuejs.org/v2/guide/forms.html">https://cn.vuejs.org/v2/guide/forms.html</a></li>
+</ul>
+</li>
+<li>v-pre<ul>
+<li>不处理指定节点及内部所有节点的 vue 规则</li>
+<li>例如可以用来显示原始的 Mustache 标签</li>
+<li>作用：跳过大量没有指令的节点可以加快编译速度</li>
+</ul>
+</li>
+<li>v-cloak<ul>
+<li>可以处理表达式闪烁的问题</li>
+</ul>
+</li>
+<li>v-once<ul>
+<li>一次性绑定，后续数据的更新不会响应</li>
+</ul>
+</li>
+</ul>
+<p>指令（Directives）是带有 <code>v-</code> 前缀的特殊属性。
+指令属性的值预期是单一 JavaScript 表达式（除了 <code>v-for</code>，之后再讨论）。指令的职责就是当其表达式的值改变时相应地将某些行为应用到 DOM 上。</p>
+<pre><code class="lang-html">&lt;p v-if=&quot;seen&quot;&gt;Now you see me&lt;/p&gt;
+</code></pre>
+<p>这里， v-if 指令将根据表达式 seen 的值的真假来移除/插入 <p> 元素。</p>
+<p>除了内置指令，Vue 还支持自定义指令。</p>
+<h4 id="-">参数</h4>
+<p>一些指令能接受一个“参数”，在指令后以冒号指明。
+例如， v-bind 指令被用来响应地更新 HTML 属性：</p>
+<pre><code class="lang-html">&lt;a href=&quot;url&quot;&gt;&lt;/a&gt;
+&lt;a href=&quot;1&quot;&gt;&lt;/a&gt;
+
+&lt;a v-bind:href=&quot;url&quot;&gt;&lt;/a&gt;
+&lt;a v-bind:href=&quot;&#39;url&#39;&quot;&gt;&lt;/a&gt;
+&lt;a v-bind:href=&quot;1 + 10&quot;&gt;&lt;/a&gt;
+
+&lt;div&gt;
+  {{ 1 + 10 }}
+&lt;/div&gt;
+</code></pre>
+<p>在这里 <code>href</code> 是参数，告知 <code>v-bind</code> 指令将该元素的 <code>href</code> 属性与表达式 <code>url</code> 的值绑定。</p>
+<p>另一个例子是 v-on 指令，它用于监听 DOM 事件：</p>
+<pre><code class="lang-html">&lt;a v-on:click=&quot;doSomething&quot;&gt;
+</code></pre>
+<p>在这里参数是监听的事件名：<code>click</code>。</p>
+<h4 id="-">修饰符</h4>
+<p>修饰符（Modifiers）是以半角句号 . 指明的特殊后缀，用于指出一个指令应该以特殊方式绑定。
+例如，.prevent 修饰符告诉 v-on 指令对于触发的事件调用 event.preventDefault()：</p>
+<pre><code class="lang-html">&lt;div&gt;
+  &lt;input type=&quot;text&quot; v-on:keyup.enter=&quot;xxx&quot;&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="lang-html">&lt;form v-on:submit.prevent=&quot;onSubmit&quot;&gt;&lt;/form&gt;
+&lt;input type=&quot;text&quot; v-on:keyup.enter=&quot;addTodo&quot;&gt;
+</code></pre>
+<h3 id="-">过滤器</h3>
+<blockquote>
+<p>注意：Vue 2.x 中，过滤器只能在 mustache 绑定和 v-bind 表达式（从 2.1.0 开始支持）中使用，
+因为过滤器设计目的就是用于文本转换。为了在其他指令中实现更复杂的数据变换，你应该使用 <strong>计算属性</strong>。</p>
+</blockquote>
+<ul>
+<li>Vue.js 允许你自定义过滤器，可被用作一些常见的文本格式化</li>
+<li>过滤器可以用在两个地方：<code>mustache 插值</code> 和 <code>v-bind 表达式</code></li>
+</ul>
+<p>全局过滤器（任何实例管理的模板都可以使用）：</p>
+<pre><code class="lang-js">Vue.filter(&#39;capitalize&#39;, function (value) {
+  if (!value) return &#39;&#39;
+  value = value.toString()
+  return value.charAt(0).toUpperCase() + value.slice(1)
+})
+</code></pre>
+<p>局部过滤器（只能被该实例管理的模板使用，其它实例管理的模板不能使用）：</p>
+<pre><code class="lang-js">new Vue({
+  // ...
+  filters: {
+    capitalize: function (value) {
+      if (!value) return &#39;&#39;
+      value = value.toString()
+      return value.charAt(0).toUpperCase() + value.slice(1)
+    }
+  }
+})
+</code></pre>
+<p>过滤器使用格式：</p>
+<pre><code class="lang-html">&lt;!-- in mustaches --&gt;
+{{ message | capitalize }}
+
+&lt;!-- in v-bind --&gt;
+&lt;div v-bind:id=&quot;rawId | formatId&quot;&gt;&lt;/div&gt;
+</code></pre>
+<p>过滤器可以串联：</p>
+<pre><code class="lang-html">{{ message | filterA | filterB }}
+</code></pre>
+<p>过滤器是 JavaScript 函数，因此可以接受参数：</p>
+<pre><code class="lang-html">{{ message | filterA(&#39;arg1&#39;, arg2) }}
+</code></pre>
+<p>这里，字符串 &#39;arg1&#39; 将传给过滤器作为第二个参数，arg2 表达式的值将被求值然后传给过滤器作为第三个参数。</p>
+<h3 id="-">缩写</h3>
+<h4 id="v-bind-">v-bind 缩写</h4>
+<pre><code class="lang-html">&lt;!-- 完整语法 --&gt;
+&lt;a v-bind:href=&quot;url&quot;&gt;&lt;/a&gt;
+&lt;!-- 缩写 --&gt;
+&lt;a :href=&quot;url&quot;&gt;&lt;/a&gt;
+</code></pre>
+<h4 id="v-on-">v-on 缩写</h4>
+<pre><code class="lang-html">&lt;!-- 完整语法 --&gt;
+&lt;a v-on:click=&quot;doSomething&quot;&gt;&lt;/a&gt;
+&lt;!-- 缩写 --&gt;
+&lt;a @click=&quot;doSomething&quot;&gt;&lt;/a&gt;
+</code></pre>
+<hr>
+<h2 id="-">计算属性</h2>
+<p>模板内的表达式是非常便利的，但是它们实际上只用于简单的运算。
+在模板中放入太多的逻辑会让模板过重且难以维护。例如：</p>
+<pre><code class="lang-html">&lt;div id=&quot;example&quot;&gt;
+  {{ message.split(&#39;&#39;).reverse().join(&#39;&#39;) }}
+&lt;/div&gt;
+</code></pre>
+<p>在这种情况下，模板不再简单和清晰。
+这就是对于任何复杂逻辑，你都应当使用计算属性的原因。</p>
+<h4 id="-">基础例子：反转字符串</h4>
+<pre><code class="lang-js">var vm = new Vue({
+  el: &#39;#example&#39;,
+  data: {
+    message: &#39;Hello&#39;
+  },
+  computed: {
+    // a computed getter
+    reversedMessage: function () {
+      // `this` points to the vm instance
+      return this.message.split(&#39;&#39;).reverse().join(&#39;&#39;)
+    }
+  }
+})
+</code></pre>
+<p>你可以像绑定普通属性一样在模板中绑定计算属性。 
+Vue 知道 <code>vm.reversedMessage</code> 依赖于 <code>vm.message</code> ，
+因此当 <code>vm.message</code> 发生改变时，所有依赖于 <code>vm.reversedMessage</code> 的绑定也会被重新计算进行更新。</p>
+<hr>
+<h2 id="class-style-">Class 与 Style 绑定</h2>
+<p>在 <code>v-bind</code> 用于 <code>class</code> 和 <code>style</code> 时， Vue.js 专门增强了它。
+表达式的结果类型除了 <strong>字符串</strong> 之外，还可以是 <strong>对象</strong> 或 <strong>数组</strong> 。</p>
+<h3 id="-html-class">绑定 HTML Class</h3>
+<h4 id="-">对象语法</h4>
+<pre><code class="lang-html">&lt;div v-bind:class=&quot;{ active: isActive }&quot;&gt;&lt;/div&gt;
+
+&lt;!-- v-bind:class 指令可以与普通的 class 属性共存 --&gt;
+&lt;div class=&quot;static&quot;
+     v-bind:class=&quot;{ active: isActive, &#39;text-danger&#39;: hasError }&quot;&gt;
+&lt;/div&gt;
+</code></pre>
+<p>也可以直接绑定数据里的一个对象：</p>
+<pre><code class="lang-html">&lt;div v-bind:class=&quot;classObject&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+  new Vue({
+    data: {
+      classObject: {
+        active: true,
+        &#39;text-danger&#39;: false
+      }
+    }
+  })
+&lt;/script&gt;
+</code></pre>
+<h4 id="-">数组语法</h4>
+<pre><code class="lang-html">&lt;!-- 可以把一个数组传给 v-bind:class ，以应用一个 class 列表 --&gt;
+&lt;div v-bind:class=&quot;[activeClass, errorClass]&quot;&gt;
+
+data: {
+  activeClass: &#39;active&#39;,
+  errorClass: &#39;text-danger&#39;
+}
+
+&lt;!-- 根据条件切换列表中的 class ，可以用三元表达式： --&gt;
+&lt;div v-bind:class=&quot;[isActive ? activeClass : &#39;&#39;, errorClass]&quot;&gt;
+
+&lt;!-- 可以在数组语法中使用对象语法： --&gt;
+&lt;div v-bind:class=&quot;[{ active: isActive }, errorClass]&quot;&gt;
+</code></pre>
+<h3 id="-">绑定内联样式</h3>
+<pre><code class="lang-html">&lt;!-- CSS 属性名可以用驼峰式（camelCase）或名短横分隔命（kebab-case） --&gt;
+&lt;div v-bind:style=&quot;{ color: activeColor, &#39;font-size&#39;: fontSize + &#39;px&#39; }&quot;&gt;&lt;/div&gt;
+
+data: {
+  activeColor: &#39;red&#39;,
+  fontSize: 30
+}
+
+&lt;!-- 直接绑定到一个样式对象 --&gt;
+&lt;div v-bind:style=&quot;styleObject&quot;&gt;&lt;/div&gt;
+data: {
+  styleObject: {
+    color: &#39;red&#39;,
+    fontSize: &#39;13px&#39;
+  }
+}
+
+&lt;!-- v-bind:style 的数组语法可以将多个样式对象应用到一个元素上 --&gt;
+&lt;div v-bind:style=&quot;[baseStyles, overridingStyles]&quot;&gt;
+</code></pre>
+<hr>
+<h2 id="-">条件渲染</h2>
+<h3 id="v-if-else-elseif">v-if-else-elseif</h3>
+<pre><code class="lang-html">&lt;!-- 基本用法 --&gt;
+&lt;h1 v-if=&quot;ok&quot;&gt;Yes&lt;/h1&gt;
+
+&lt;!-- 
+  通过 template 包装多个元素，渲染结果不包含 template 
+  v-else 元素必须紧跟在 v-if 或者 v-else-if 元素的后面——否则它将不会被识别。
+--&gt;
+&lt;template v-if=&quot;ok&quot;&gt;
+  &lt;h1&gt;Title&lt;/h1&gt;
+  &lt;p&gt;Paragraph 1&lt;/p&gt;
+  &lt;p&gt;Paragraph 2&lt;/p&gt;
+&lt;/template&gt;
+
+&lt;!-- 使用 v-else 指令来表示 v-if 的“else 块” --&gt;
+&lt;div v-if=&quot;Math.random() &gt; 0.5&quot;&gt;
+  Now you see me
+&lt;/div&gt;
+&lt;div v-else&gt;
+  Now you don&#39;t
+&lt;/div&gt;
+
+&lt;!-- 
+  v-else-if，顾名思义，充当 v-if 的“else-if 块”。可以链式地使用多次： 
+  v-else,，v-else-if 必须紧跟在 v-if 或者 v-else-if 元素之后
+--&gt;
+&lt;div v-if=&quot;type === &#39;A&#39;&quot;&gt;
+  A
+&lt;/div&gt;
+&lt;div v-else-if=&quot;type === &#39;B&#39;&quot;&gt;
+  B
+&lt;/div&gt;
+&lt;div v-else-if=&quot;type === &#39;C&#39;&quot;&gt;
+  C
+&lt;/div&gt;
+&lt;div v-else&gt;
+  Not A/B/C
+&lt;/div&gt;
+</code></pre>
+<hr>
+<h2 id="-">列表渲染</h2>
+<hr>
+<h2 id="-">事件处理器</h2>
+<hr>
+<h2 id="-">表单控件绑定</h2>
+<hr>
+<h2 id="-">组件</h2>
+<p>组件是 Vue.js 最强大的功能，组件可以扩展自定义 HTML 元素，封装可重用代码。</p>
+<p>组件可以将你的 Web 应用程序划分为一块一块的独立的部分来进行开发构建，</p>
+<h3 id="-">组件的命名</h3>
+<ul>
+<li>如果一个单词就只写一个单词即可</li>
+<li>如果是多个单词组成的名字<ul>
+<li>建议使用短横杠的方式</li>
+</ul>
+</li>
+<li>如果使用的是驼峰命名<ul>
+<li>则在 DOM 模板中必须将 驼峰命名的组件名改为短横杠的方式</li>
+<li>在 字符串模板中，无论是驼峰还是短横杠都行</li>
+</ul>
+</li>
+</ul>
+<h3 id="-">组件基础</h3>
+<ul>
+<li>注册全局组件</li>
+<li>注册局部组件</li>
+<li>组件的模板</li>
+<li>组件的 data</li>
+</ul>
+<h4 id="-vue-component-tagname-options-">注册全局组件：<code>Vue.component(tagName, options)</code></h4>
+<p>注册：</p>
+<pre><code class="lang-js">Vue.component(&#39;my-component&#39;, {
+  template: &#39;&lt;div&gt;A custom component!&lt;/div&gt;&#39;
+})
+</code></pre>
+<p>使用：</p>
+<pre><code class="lang-html">&lt;div id=&quot;example&quot;&gt;
+  &lt;my-component&gt;&lt;/my-component&gt;
+&lt;/div&gt;
+</code></pre>
+<p>渲染为：</p>
+<pre><code class="lang-html">&lt;div id=&quot;example&quot;&gt;
+  &lt;div&gt;A custom component!&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h4 id="-template">组件的 template</h4>
+<p>组件的 template 必须具有一个根节点，否则，模板编译报错。</p>
+<ul>
+<li>可以是内联模板</li>
+<li>可以是 script 标签模板</li>
+<li>可以是 .vue 模板</li>
+</ul>
+<h4 id="-components-">局部注册组件：实例选项的 <code>components</code></h4>
+<p>不必在全局注册每个组件。
+通过使用组件实例选项注册，可以使组件仅在另一个实例/组件的作用域中可用：</p>
+<pre><code class="lang-html">&lt;body&gt;
+  &lt;div id=&quot;app&quot;&gt;
+    &lt;!-- 渲染为 &lt;div&gt;局部组件&lt;/div&gt; --&gt;
+    &lt;my-component&gt;&lt;/my-component&gt;
+  &lt;/div&gt;
+  &lt;script src=&quot;../node_modules/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+    new Vue({
+      el: &#39;#app&#39;,
+      components: {
+        &#39;my-component&#39;: {
+          template: &#39;&lt;div&gt;局部组件&lt;/div&gt;&#39;
+        }
+      },
+      data: {
+      },
+    })
+  &lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+<h4 id="-dom-">在 DOM 模板中使用组件注意事项</h4>
+<p>当使用 DOM 作为模版时（例如，将 <code>el</code> 选项挂载到一个已存在的元素上）,
+你会受到 HTML 的一些限制，
+因为 Vue 只有在浏览器解析和标准化 HTML 后才能获取模版内容。
+尤其像这些元素 <code>&lt;ul&gt;</code> ， <code>&lt;ol&gt;</code>， <code>&lt;table&gt;</code> ， <code>&lt;select&gt;</code> 限制了能被它包裹的元素， 
+<code>&lt;option&gt;</code> 只能出现在其它元素内部。</p>
+<p>在自定义组件中使用这些受限制的元素时会导致一些问题，例如：</p>
+<pre><code class="lang-html">&lt;table&gt;
+  &lt;my-row&gt;...&lt;/my-row&gt;
+&lt;/table&gt;
+</code></pre>
+<p>自定义组件 <code>&lt;my-row&gt;</code> 被认为是无效的内容，因此在渲染的时候会导致错误。
+变通的方案是使用特殊的 <code>is</code> 属性：</p>
+<pre><code class="lang-html">&lt;table&gt;
+  &lt;tr is=&quot;my-row&quot;&gt;&lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+<p><strong>应当注意，如果您使用来自以下来源之一的字符串模板，这些限制将不适用：</strong></p>
+<ul>
+<li><code>&lt;script type=&quot;text/x-template&quot;&gt;</code></li>
+<li>JavaScript内联模版字符串</li>
+<li><code>.vue</code> 组件</li>
+</ul>
+<p>因此，推荐使用字符串模板。</p>
+<h4 id="-data-">组件的 <code>data</code> 必须是函数</h4>
+<p>在组件中，data 必须是函数，下面是错误的方式：</p>
+<pre><code class="lang-js">Vue.component(&#39;my-component&#39;, {
+  template: &#39;&lt;span&gt;{{ message }}&lt;/span&gt;&#39;,
+  data: {
+    message: &#39;hello&#39;
+  }
+})
+</code></pre>
+<p>正确的方式：</p>
+<pre><code class="lang-js">data: function () {
+  return {
+    message: &#39;组件的 data 必须是函数返回一个json字面量对象&#39;
+  }
+}
+</code></pre>
+<h3 id="-">组件通信</h3>
+<ul>
+<li>使用 prop 传递数据</li>
+<li>props 命名规则<ul>
+<li>camelCase 和 kebab-case</li>
+</ul>
+</li>
+<li>动态 prop<ul>
+<li>v-bind</li>
+</ul>
+</li>
+<li>字面量语法 vs 动态语法</li>
+<li>单向数据流</li>
+</ul>
+<p>组件意味着协同工作，通常父子组件会是这样的关系：组件 A 在它的模版中使用了组件 B 。
+它们之间必然需要相互通信：</p>
+<ul>
+<li>父组件要给子组件传递数据</li>
+<li>子组件需要将它内部发生的事情告知给父组件</li>
+</ul>
+<p>然而，在一个良好定义的接口中尽可能将父子组件解耦是很重要的。
+这保证了每个组件可以在相对隔离的环境中书写和理解，也大幅提高了组件的可维护性和可重用性。</p>
+<p>在 Vue.js 中，父子组件的关系可以总结为 <code>props down, events up</code>:</p>
+<ul>
+<li>父组件通过 <code>props</code> 向下传递数据给子组件</li>
+<li>子组件通过 <code>events</code> 给父组件发送消息</li>
+</ul>
+<p><img src="img/props-events.png" alt="img/props-events.png"></p>
+<h4 id="-prop-">使用 prop 传递数据</h4>
+<p>组件实例的作用域是孤立的。
+这意味着不能(也不应该)在子组件的模板内直接引用父组件的数据。
+要让子组件使用父组件的数据，我们需要通过子组件的props选项。</p>
+<p>子组件要显式地用 <code>props</code> 选项声明它期待获得的数据：</p>
+<pre><code class="lang-js">Vue.component(&#39;child&#39;, {
+  // 声明 props
+  props: [&#39;message&#39;],
+  // 就像 data 一样，prop 可以用在模板内
+  // 同样也可以在 vm 实例中像 “this.message” 这样使用
+  template: &#39;&lt;span&gt;{{ message }}&lt;/span&gt;&#39;
+})
+</code></pre>
+<p>然后我们可以这样向它传入一个普通字符串：</p>
+<pre><code class="lang-html">&lt;child message=&quot;hello!&quot;&gt;&lt;/child&gt;
+</code></pre>
+<h4 id="camelcase-kabab-case-">camelCase 和 kabab-case 命名规则</h4>
+<h4 id="-prop">动态 prop</h4>
+<h4 id="-vs-">字面量语法 vs 动态语法</h4>
+<h4 id="-">单向数据流</h4>
+<p>prop 是单向绑定的：</p>
+<ul>
+<li>当父组件的属性发生变化时，将传导给子组件<ul>
+<li>子组件动态绑定的 prop，当父组件更新，子组件所有的 prop 都会得到更新</li>
+</ul>
+</li>
+<li>但是不会反过来<ul>
+<li>也就是说，在子组件内部修改 prop 数据<ul>
+<li>子组件内部会响应更新</li>
+<li>更新不会传导给父组件</li>
+<li>同时 Vue 会在控制台发出警告</li>
+<li>对象和数组除外</li>
+<li>如果 prop 是一个对象或数组，在子组件内部修改它会影响父组件的状态</li>
+<li>如果直接给 prop 中的对象或数组类型数据重新赋值，父组件也不会得到更新</li>
+</ul>
+</li>
+<li>这是为了防止子组件无意间修改了父组件的状态</li>
+<li>这会让数据流的走向变得混乱而难以理解</li>
+</ul>
+</li>
+</ul>
+<p>为什么我们会有修改 prop 中数据的冲动呢？</p>
+<ol>
+<li>prop 作为初始值传入后，子组件想要把它当作局部数据来用</li>
+<li>prop 作为初始值传入后，由子组件处理成其它数据输出</li>
+</ol>
+<p>对于这两种原因，正确的方式是：</p>
+<ol>
+<li>定义一个局部变量，并用 prop 的值初始化它</li>
+</ol>
+<pre><code class="lang-js">props: [&#39;initialCounter&#39;],
+data: function () {
+  return {
+    counter: this.initialCounter 
+  }
+}
+</code></pre>
+<ol>
+<li>定义一个计算属性，处理 prop 的值并返回</li>
+</ol>
+<pre><code class="lang-js">props: [&#39;size&#39;],
+computed: {
+  normalizedSize: function () {
+    return this.size.trim().toLowerCase()
+  }
+}
+</code></pre>
+<h4 id="prop-">Prop 验证</h4>
+<p>我们可以为组件的 props 指定验证规格。
+如果传入的数据不符合规格，Vue 会发出警告。
+当组件给其他人使用时，这就很有用了。</p>
+<p>要指定验证规格，需要使用对象的形式，而不能用字符串数组：</p>
+<pre><code class="lang-js">Vue.component(&#39;example&#39;, {
+  props: {
+    // 基础类型检测 （`null` 意思是任何类型都可以）
+    propA: Number,
+    // 多种类型
+    propB: [String, Number],
+    // 必传且是字符串
+    propC: {
+      type: String,
+      required: true
+    },
+    // 数字，有默认值
+    propD: {
+      type: Number,
+      default: 100
+    },
+    // 数组／对象的默认值应当由一个工厂函数返回
+    propE: {
+      type: Object,
+      default: function () {
+        return { message: &#39;hello&#39; }
+      }
+    },
+    // 自定义验证函数
+    propF: {
+      validator: function (value) {
+        return value &gt; 10
+      }
+    }
+  }
+})
+</code></pre>
+<p><code>type</code> 可以是下面原生的数据类型：</p>
+<ul>
+<li>String</li>
+<li>Number</li>
+<li>Boolean</li>
+<li>Function</li>
+<li>Object</li>
+<li>Array</li>
+</ul>
+<p><code>type</code> 也可以是一个自定义构造器函数（例如 Person），
+Vue 会使用 <code>instanceof</code> 对数据进行检测。</p>
+<p>当 prop 验证失败，Vue会在抛出警告 (如果使用的是开发版本)。</p>
+<h3 id="-">自定义事件（父子通信）</h3>
+<ul>
+<li>使用 v-on 绑定自定义事件</li>
+<li>使用自定义事件的表单输入组件</li>
+<li>非父子组件通信</li>
+</ul>
+<p>父组件是使用 props 传递数据给子组件，
+但如果子组件要把数据传递回去，应该怎样做？
+那就是自定义事件！</p>
+<h4 id="-v-on-">使用 v-on 绑定自定义事件</h4>
+<p>每个 Vue 实例都实现了事件接口：</p>
+<ul>
+<li>使用 $on(eventName) 监听事件</li>
+<li>使用 $emit(eventName) 触发事件</li>
+</ul>
+<p>父组件可以在使用子组件的地方直接使用 <code>v-on</code> 监听子组件发射的事件。
+注意：不能使用 <code>$on</code> 侦听子组件抛出的事件，而必须在模板里直接使用 <code>v-on</code> 绑定。</p>
+<pre><code class="lang-html">&lt;body&gt;
+  &lt;div id=&quot;app&quot;&gt;
+    &lt;p&gt;{{ total }}&lt;/p&gt;
+    &lt;child v-on:increment=&quot;incrementTotal&quot;&gt;&lt;/child&gt;
+    &lt;child v-on:increment=&quot;incrementTotal&quot;&gt;&lt;/child&gt;
+  &lt;/div&gt;
+  &lt;script src=&quot;../node_modules/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+    Vue.component(&#39;child&#39;, {
+      template: `
+      &lt;div&gt;
+        &lt;span&gt;{{ counter }}&lt;/span&gt;
+        &lt;button @click=&quot;increment&quot;&gt;increment&lt;/button&gt;
+      &lt;/div&gt;`,
+      data () {
+        return {
+          counter: 0
+        }
+      },
+      methods: {
+        increment () {
+          this.counter += 1
+          this.$emit(&#39;increment&#39;)
+        }
+      }
+    })
+    new Vue({
+      el: &#39;#app&#39;,
+      data: {
+        total: 0
+      },
+      methods: {
+        incrementTotal () {
+          this.total += 1
+        }
+      }
+    })
+  &lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+<p>在本示例中，子组件已经和它外部完全解耦了。
+它所做的只是报告自己的内部事件，至于父组件是否关心则与它无关。</p>
+<p>有时候，可能想要在某个组件的根元素上绑定一个原生事件。
+可以使用 <code>.native</code> 修饰 <code>v-on</code>。例如：</p>
+<pre><code class="lang-html">&lt;my-component v-on:click.native=&quot;doTheThing&quot;&gt;&lt;/my-component&gt;
+</code></pre>
+<h4 id="-">非父子组件通信</h4>
+<p>有时候两个组件也需要通信(非父子关系)。
+在简单的场景下，可以使用一个空的 Vue 实例作为中央事件总线：</p>
+<pre><code class="lang-html">&lt;body&gt;
+  &lt;div id=&quot;app&quot;&gt;
+    &lt;child-a&gt;&lt;/child-a&gt;
+    &lt;child-b&gt;&lt;/child-b&gt;
+  &lt;/div&gt;
+  &lt;script src=&quot;../node_modules/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+    const bus = new Vue()
+    Vue.component(&#39;child-a&#39;, {
+      template: `
+      &lt;div&gt;
+        &lt;p&gt;组件 child A&lt;/p&gt;
+        &lt;button @click=&quot;emitDataToB&quot;&gt;发射数据到&lt;/button&gt;
+      &lt;/div&gt;
+      `,
+      methods: {
+        emitDataToB() {
+          // 在组件 A 中通过 $emit 发射 data 事件，组件 B 中的钩子监听了 data 事件
+          bus.$emit(&#39;data&#39;, &#39;组件a传递过来的数据&#39;)
+        }
+      }
+    })
+    Vue.component(&#39;child-b&#39;, {
+      template: `
+      &lt;div&gt;
+        &lt;p&gt;组件 child B&lt;/p&gt;
+        &lt;p&gt;{{ message }}&lt;/p&gt;
+      &lt;/div&gt;
+      `,
+      created() {
+        const vm = this
+          // 在组件 B 的钩子中通过 bud 的 $on 监听事件
+        bus.$on(&#39;data&#39;, function (data) {
+          vm.message = data
+        })
+      },
+      data() {
+        return {
+          message: &#39;hello child b&#39;
+        }
+      }
+    })
+    new Vue({
+      el: &#39;#app&#39;,
+      data: {},
+    })
+  &lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+<h3 id="-slot-">使用 Slot 分发内容</h3>
+<ul>
+<li>编译作用域</li>
+<li>单个 Slot</li>
+<li>具名 Slot</li>
+<li>作用域插槽</li>
+</ul>
+<p>在使用组件的时候，我们常常要像这样组合它们：</p>
+<pre><code class="lang-html">&lt;app&gt;
+  &lt;app-header&gt;&lt;/app-header&gt;
+  &lt;app-footer&gt;&lt;/app-footer&gt;
+&lt;/app&gt;
+</code></pre>
+<p>注意两点：</p>
+<ol>
+<li><code>&lt;app&gt;</code> 组件不知道它的挂载点会有什么内容。挂载点的内容是由 <code>&lt;app&gt;</code> 的父组件决定的</li>
+<li><code>&lt;app&gt;</code> 组件很可能有它自己的模板</li>
+</ol>
+<p>为了让组件可以组合，我们需要一种方式来混合父组件的内容和子组件自己的模板。
+这个过程被称为 <strong>内容分发</strong>（或 “transclusion”）。</p>
+<p>Vue.js 实现了一个内容分发 API，参照了当前 Web 组件规范草案，
+使用特殊的 <code>&lt;slot&gt;</code> 元素作为原始内容的插槽。</p>
+<h4 id="-">编译作用域</h4>
+<h4 id="-slot">单个 Slot</h4>
+<ul>
+<li>如果子组件没有 <code>&lt;slot&gt;</code> 插口，否则父组件的内容会被丢弃</li>
+<li>当子组件模板只有一个没有属性的 slot 时<ul>
+<li>父组件整个内容片段都将插入到 slot 所在的 DOM 位置</li>
+<li>并替换掉 slot 标签本身</li>
+<li>在 slot 标签中的任何内容都被视为 备用内容</li>
+<li>备用内容在子组件的作用域内编译</li>
+<li>并且只有宿主元素为空的时候，备用内容才会被编译显示出来</li>
+</ul>
+</li>
+</ul>
+<p>示例如下：</p>
+<pre><code class="lang-html">&lt;body&gt;
+  &lt;div id=&quot;app&quot;&gt;
+    &lt;bs-panel title=&quot;面板1&quot;&gt;
+      面板1的内容
+    &lt;/bs-panel&gt;
+    &lt;bs-panel title=&quot;面板2&quot;&gt;
+      面板2的内容
+    &lt;/bs-panel&gt;
+    &lt;bs-panel title=&quot;没有分发内容的面板&quot;&gt;
+    &lt;/bs-panel&gt;
+  &lt;/div&gt;
+  &lt;script src=&quot;../node_modules/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+    Vue.component(&#39;bs-panel&#39;, {
+      template: `
+      &lt;div class=&quot;panel panel-default&quot;&gt;
+        &lt;div class=&quot;panel-heading&quot;&gt;
+          &lt;h3 class=&quot;panel-title&quot;&gt;{{ title }}&lt;/h3&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;panel-body&quot;&gt;
+          &lt;slot&gt;
+            只有才没有分发的内容时才会显示
+          &lt;/slot&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      `,
+      props: {
+        title: { type: String, required: true }
+      }
+    })
+    new Vue({
+      el: &#39;#app&#39;,
+      data: {},
+    })
+  &lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+<h4 id="-slot">具名 slot</h4>
+<ul>
+<li>在组合组件时，内容分发 API 是非常有用的机制</li>
+<li><code>&lt;slot&gt;</code> 元素可以用一个特殊的属性 <code>name</code> 来配置如何分发内容</li>
+<li>多个 slot 可以有不同的名字。</li>
+<li>具名 slot 将匹配内容片段中有对应 slot 特性的元素</li>
+<li>仍然可以有一个匿名 slot，它是默认 slot<ul>
+<li>作为找不到匹配的内容片段的备用插槽</li>
+<li>如果没有默认的 slot，这些找不到插槽的内容片段将被抛弃</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-html">&lt;body&gt;
+  &lt;div id=&quot;app&quot;&gt;
+    &lt;app-layout&gt;
+      &lt;h1 slot=&quot;header&quot;&gt;顶部&lt;/h1&gt;
+      &lt;p&gt;内容段落&lt;/p&gt;
+      &lt;p&gt;内容段落&lt;/p&gt;
+      &lt;p slot=&quot;footer&quot;&gt;底部信息&lt;/p&gt;
+    &lt;/app-layout&gt;
+  &lt;/div&gt;
+  &lt;script src=&quot;../node_modules/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+    Vue.component(&#39;app-layout&#39;, {
+      template: `
+        &lt;div class=&quot;container&quot;&gt;
+          &lt;header&gt;
+            &lt;slot name=&quot;header&quot;&gt;&lt;/slot&gt;
+          &lt;/header&gt;
+          &lt;main&gt;
+            &lt;slot&gt;&lt;/slot&gt;
+          &lt;/main&gt;
+          &lt;footer&gt;
+            &lt;slot name=&quot;footer&quot;&gt;&lt;/slot&gt;
+          &lt;/footer&gt;
+        &lt;/div&gt;
+      `
+    })
+    new Vue({
+      el: &#39;#app&#39;,
+      data: {},
+    })
+  &lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+<h4 id="-">作用域插槽</h4>
+<ul>
+<li>目的：作用域插槽的目的就是可以将子组件内部的数据传递到外部</li>
+<li>在子组件中，在 <code>slot</code> 标签上通过属性的方式将 prop 数据传递到外部</li>
+<li>在父组件中，通过具有特殊属性 <code>scope</code> 的 <code>&lt;template&gt;</code> 元素，表示它是作用域插槽的模板<ul>
+<li><code>scope</code> 的值对应一个临时变量名</li>
+<li>该变量接收来自子组件中通过 <code>slot</code> 元素属性传递的 prop 数据</li>
+</ul>
+</li>
+</ul>
+<p>示例如下：</p>
+<pre><code class="lang-html">&lt;body&gt;
+  &lt;div id=&quot;app&quot;&gt;
+    &lt;child&gt;
+      &lt;template scope=&quot;props&quot;&gt;
+        &lt;p&gt;hello from parent&lt;/p&gt;
+        &lt;p&gt;{{ props.text }}&lt;/p&gt;
+        &lt;p&gt;{{ props.message }}&lt;/p&gt;
+      &lt;/template&gt;
+    &lt;/child&gt;
+  &lt;/div&gt;
+  &lt;script src=&quot;../node_modules/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+    Vue.component(&#39;child&#39;, {
+      template: `
+        &lt;div class=&quot;child&quot;&gt;
+          &lt;input v-model=&quot;message&quot; /&gt;
+          &lt;slot text=&quot;hello from child&quot; :message=&quot;message&quot;&gt;&lt;/slot&gt;
+        &lt;/div&gt;
+      `,
+      data () {
+        return {
+          message: &#39;child message&#39;
+        }
+      }
+    })
+    new Vue({
+      el: &#39;#app&#39;,
+      data: {
+      },
+    })
+  &lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+<p>作用域插槽更具代表性的用例是列表组件，允许组件自定义应该如何渲染列表每一项：</p>
+<pre><code class="lang-html">&lt;body&gt;
+  &lt;div id=&quot;app&quot;&gt;
+    &lt;my-awesome-list :todos=&quot;todos&quot;&gt;
+      &lt;template slot=&quot;item&quot; scope=&quot;props&quot;&gt;
+        &lt;li class=&quot;my-fancy-item&quot;&gt;{{ props.text }}&lt;/li&gt;
+      &lt;/template&gt;
+    &lt;/my-awesome-list&gt;
+  &lt;/div&gt;
+  &lt;script src=&quot;../node_modules/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+    Vue.component(&#39;my-awesome-list&#39;, {
+      props: [&#39;todos&#39;],
+      template: `
+        &lt;ul&gt;
+          &lt;slot name=&quot;item&quot;
+            v-for=&quot;item in todos&quot;
+            :text=&quot;item.title&quot;&gt;
+            &lt;!-- fallback content here --&gt;
+          &lt;/slot&gt;
+        &lt;/ul&gt;
+      `
+    })
+    new Vue({
+      el: &#39;#app&#39;,
+      data: {
+        todos: [
+          { id: 1, title: &#39;吃饭&#39; },
+          { id: 2, title: &#39;睡觉&#39; },
+          { id: 3, title: &#39;打豆豆&#39; },
+        ]
+      },
+    })
+  &lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+<h3 id="-">动态组件</h3>
+<p>通过保留的 <code>&lt;component&gt;</code> 元素，动态的绑定到它的 is 特性，
+我们让多个组件可以使用同一个挂载点：</p>
+<p>简单示例</p>
+<pre><code class="lang-html">&lt;body&gt;
+  &lt;div id=&quot;app&quot;&gt;
+    &lt;select v-model=&quot;currentView&quot;&gt;
+      &lt;option value=&quot;home&quot;&gt;home&lt;/option&gt;
+      &lt;option value=&quot;posts&quot;&gt;posts&lt;/option&gt;
+      &lt;option value=&quot;archive&quot;&gt;archive&lt;/option&gt;
+    &lt;/select&gt;
+    &lt;component v-bind:is=&quot;currentView&quot;&gt;&lt;/component&gt;
+  &lt;/div&gt;
+  &lt;script src=&quot;../node_modules/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+    new Vue({
+      el: &#39;#app&#39;,
+      data: {
+        currentView: &#39;home&#39;
+      },
+      components: {
+        home: {
+          template: &#39;&lt;div&gt;home&lt;/div&gt;&#39;,
+        },
+        posts: {
+          template: &#39;&lt;div&gt;posts&lt;/div&gt;&#39;,
+        },
+        archive: {
+          template: &#39;&lt;div&gt;archive&lt;/div&gt;&#39;,
+        }
+      }
+    })
+  &lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+<p>登陆注册示例：</p>
+<pre><code class="lang-html">&lt;body&gt;
+  &lt;div id=&quot;app&quot;&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;JavaScript:void(0)&quot; @click=&quot;defaultView = &#39;register&#39;&quot;&gt;注册&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;JavaScript:void(0)&quot; @click=&quot;defaultView = &#39;login&#39;&quot;&gt;登陆&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div&gt;
+      &lt;component :is=&quot;defaultView&quot;&gt;&lt;/component&gt;
+    &lt;/div&gt;
+    &lt;hr&gt;&lt;hr&gt;&lt;hr&gt;&lt;hr&gt;
+    &lt;div&gt;
+      &lt;!-- 可以使用 keep-alive 保持组件状态 --&gt;
+      &lt;keep-alive&gt;
+        &lt;component :is=&quot;defaultView&quot;&gt;&lt;/component&gt;
+      &lt;/keep-alive&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;script src=&quot;../node_modules/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+    new Vue({
+      el: &#39;#app&#39;,
+      components: {
+        login: {
+          template: `
+            &lt;form action=&quot;&quot;&gt;
+              &lt;div&gt;
+                &lt;label for=&quot;&quot;&gt;用户名&lt;/label&gt;
+                &lt;input type=&quot;text&quot; /&gt;
+              &lt;/div&gt;
+              &lt;div&gt;
+                &lt;label for=&quot;&quot;&gt;密码&lt;/label&gt;
+                &lt;input type=&quot;password&quot; /&gt;
+              &lt;/div&gt;
+              &lt;div&gt;
+                &lt;input type=&quot;submit&quot; value=&quot;点击登陆&quot; /&gt;
+              &lt;/div&gt;
+            &lt;/form&gt;
+          `
+        },
+        register: {
+          template: `
+            &lt;form action=&quot;&quot;&gt;
+              &lt;div&gt;
+                &lt;label for=&quot;&quot;&gt;用户名&lt;/label&gt;
+                &lt;input type=&quot;text&quot; /&gt;
+              &lt;/div&gt;
+              &lt;div&gt;
+                &lt;label for=&quot;&quot;&gt;密码&lt;/label&gt;
+                &lt;input type=&quot;password&quot; /&gt;
+              &lt;/div&gt;
+              &lt;div&gt;
+                &lt;label for=&quot;&quot;&gt;确认密码&lt;/label&gt;
+                &lt;input type=&quot;password&quot; /&gt;
+              &lt;/div&gt;
+              &lt;div&gt;
+                &lt;label for=&quot;&quot;&gt;验证码&lt;/label&gt;
+                &lt;input type=&quot;password&quot; /&gt;
+              &lt;/div&gt;
+              &lt;div&gt;
+                &lt;input type=&quot;submit&quot; value=&quot;点击注册&quot; /&gt;
+              &lt;/div&gt;
+            &lt;/form&gt;
+          `
+        }
+      },
+      data: {
+        defaultView: &#39;login&#39;
+      },
+    })
+  &lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+<hr>
+<h2 id="-vue-">使用 Vue 的一些经验</h2>
+<h3 id="-vue">调试 Vue</h3>
+<ul>
+<li><a href="https://github.com/vuejs/vue-devtools">https://github.com/vuejs/vue-devtools</a></li>
+<li><a href="https://github.com/MiCottOn/DejaVue">https://github.com/MiCottOn/DejaVue</a></li>
+</ul>
+<h3 id="-">解决表达式闪烁</h3>
+<ol>
+<li>将所有 <code>{{}}</code> 通过 <code>v-text</code> 替换</li>
+<li>使用 <code>v-cloak</code> 解决</li>
+</ol>
+<p>第一，在要渲染处理的 DOM 节点上添加一个指令 <code>v-cloak</code>：</p>
+<pre><code class="lang-html">&lt;div id=&quot;app&quot; ng-cloak&gt;
+  {{ message }}
+&lt;/div&gt;
+</code></pre>
+<p>第二，在 style 中加入一个属性选择器样式：</p>
+<pre><code class="lang-css">[v-cloak] { 
+  display: none; 
+}
+</code></pre>
+<p>第三，解析执行机制：</p>
+<ol>
+<li>当浏览器解析处理到添加了 <code>v-cloak</code> 属性的节点的时候，属性样式被作用上来，也就是说默认这个容器就是隐藏着的</li>
+<li>然后当 Vue 程序解析渲染完HTML模板的时候，自动将容器上的 <code>v-cloak</code> 属性移除</li>
+</ol>
+<h2 id="vue-cli">vue-cli</h2>
+<p>安装：</p>
+<pre><code class="lang-bahs">npm install -g vue-cli
+</code></pre>
+<p>使用：</p>
+<pre><code class="lang-bash"># 查看版本号
+vue --version
+
+# 查看使用帮助
+vue --help
+
+# 查看可用模板
+vue list
+
+# 根据指定模板初始化一个起步项目
+vue init &lt;template-name&gt; &lt;project-name&gt;
+</code></pre>
+<p>例如：</p>
+<pre><code class="lang-bash"># 基于 webpack 模板初始化一个项目
+# 初始化的过程中会以向导的方式提问
+vue init webpack vuecli-demo
+
+# 进入刚刚初始化的 vuecli-demo 目录
+cd vuecli-demo
+
+# 安装依赖项
+npm install
+
+# 启动开发环境
+npm run dev 或者 npm start
+</code></pre>
+
+  </article>
+</body>
+
+</html>
